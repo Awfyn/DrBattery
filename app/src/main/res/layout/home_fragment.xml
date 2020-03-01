@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeTopLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/homeGray"
+        app:layout_constraintVertical_weight="3"
+        app:layout_constraintBottom_toTopOf="@id/homeRemainingTime_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/batteryLevelGuideLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/batteryLevelGuideTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/batteryLevelGuideRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/batteryLevelGuideBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/homeBatteryLevel_gif"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="5"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideRight"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideTop"
+            app:layout_constraintBottom_toTopOf="@id/homeBatteryLevel_text" />
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeBatteryLevel_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="در حال پردازش..."
+            app:autoSizeTextType="uniform"
+            app:layout_constraintVertical_weight="2"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideRight"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintTop_toBottomOf="@id/homeBatteryLevel_gif"
+            app:layout_constraintBottom_toTopOf="@id/homeBatteryLevel_description" />
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeBatteryLevel_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="در شرایط فعلی"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideRight"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintTop_toBottomOf="@id/homeBatteryLevel_text"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideBottom" />
+
+        <ImageView
+            android:id="@+id/home_userApp_top"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideRight"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideTop"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_topRight"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideRight"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideTop"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideRight"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideBottom"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_rightBot"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideRight"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideBottom"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_bot"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toEndOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideBottom"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideRight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_botLeft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideBottom"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideLeft"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_left"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/batteryLevelGuideTop"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideBottom"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/home_userApp_leftTop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintEnd_toStartOf="@id/batteryLevelGuideLeft"
+            app:layout_constraintBottom_toTopOf="@id/batteryLevelGuideTop"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeRemainingTime_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_home_remaining_b_w"
+        app:layout_constraintVertical_weight="0.5"
+        app:layout_constraintTop_toBottomOf="@id/homeTopLayout"
+        app:layout_constraintBottom_toTopOf="@id/homeButtons_layout">
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeRemainingTime_best"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            android:text="در حال پردازش..."
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintHorizontal_weight="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/homeRemainingTime_bestIcon"
+            app:layout_constraintBottom_toTopOf="@id/homeRemainingTime_bestDescription"/>
+
+        <ImageView
+            android:id="@+id/homeRemainingTime_bestIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_home_best_remaining_time"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/homeRemainingTime_best"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/homeRemainingTime_bestDescription"
+            app:layout_constraintEnd_toStartOf="@id/homeRemainingTime_midView"
+            tools:ignore="ContentDescription" />
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeRemainingTime_bestDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="در هنگام کار استراحت"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeRemainingTime_best"
+            app:layout_constraintEnd_toStartOf="@id/homeRemainingTime_midView"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/homeRemainingTime_midView"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/homeDarkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeRemainingTime_worst"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            android:text="در حال پردازش..."
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintHorizontal_weight="5"
+            app:layout_constraintStart_toEndOf="@id/homeRemainingTime_midView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/homeRemainingTime_worstIcon"
+            app:layout_constraintBottom_toTopOf="@id/homeRemainingTime_worstDescription"/>
+
+        <ImageView
+            android:id="@+id/homeRemainingTime_worstIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_home_worst_remaining_time"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/homeRemainingTime_worst"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/homeRemainingTime_worstDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <!--TODO: Change Text-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeRemainingTime_worstDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="در هنگام کار دائم"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toEndOf="@id/homeRemainingTime_midView"
+            app:layout_constraintTop_toBottomOf="@id/homeRemainingTime_worst"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeButtons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1.1"
+        app:layout_constraintTop_toBottomOf="@id/homeRemainingTime_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/homeButtons_topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/homeButtons_botGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+
+        <ImageView
+            android:id="@+id/homeButtons_topUsageApps"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_home_top_usage_app_s"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeButtons_topGuide"
+            app:layout_constraintEnd_toStartOf="@id/homeButtons_optimize"
+            app:layout_constraintBottom_toTopOf="@id/homeButtons_botGuide"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/homeButtons_optimize"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_home_optimize"
+            app:layout_constraintEnd_toStartOf="@id/homeButtons_mode"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/homeButtons_topUsageApps"
+            app:layout_constraintBottom_toTopOf="@id/homeButtons_botGuide"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/homeButtons_mode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_home_mode"
+            app:layout_constraintStart_toEndOf="@id/homeButtons_optimize"
+            app:layout_constraintTop_toBottomOf="@id/homeButtons_topGuide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/homeButtons_botGuide"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
